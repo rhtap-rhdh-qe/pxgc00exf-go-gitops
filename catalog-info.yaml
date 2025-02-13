@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: pxgc00exf-go-gitops
+  description: This is GitOps manifest for pxgc00exf-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=pxgc00exf-go
+    backstage.io/kubernetes-id: pxgc00exf-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: pxgc00exf-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:pxgc00exf-go
